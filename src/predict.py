@@ -29,7 +29,7 @@ def predict_image(image_path, model_path, classes_path):
     try:
         with Image.open(image_path) as img:
             img = img.convert("RGB").resize((128, 128))
-            image = np.asarray(img, dtype=np.float32) / 255.0
+            image = np.asarray(img, dtype=np.float32)
     except (UnidentifiedImageError, OSError) as exc:
         raise ValueError("The input is not a valid image.") from exc
 
